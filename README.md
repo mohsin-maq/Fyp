@@ -1,4 +1,1 @@
-# Atmega162-Controlling-Speed-of-a-DC-fan-by-a-Temperature-Sensor-
-The "Microprocessor-Based DC Motor Speed Control Using Temperature Sensor" project leverages the capabilities of the ATmega162 microcontroller to regulate the speed of a DC motor in response to temperature changes. By integrating a temperature sensor and employing PWM (Pulse Width Modulation) techniques, the project demonstrates an innovative application of microprocessor technology in real-time control systems.
-Project Overview:
-The project focuses on designing a system that maintains the temperature of a designated environment within a specific range by controlling the speed of a DC motor that is connected to a fan or a cooling device. The ATmega162 microcontroller serves as the brain of the system, processing temperature sensor data and generating appropriate control signals for the DC motor.
+Final year project
