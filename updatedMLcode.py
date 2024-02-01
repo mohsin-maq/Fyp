@@ -5,6 +5,8 @@ import os
 import tempfile
 from langchain_experimental.agents.agent_toolkits import create_csv_agent
 from langchain.llms import OpenAI
+from langchain.chains.conversation.memory import ConversationBufferMemory
+from langchain.chains import ConversationChain
 import nbformat
 st.set_option('deprecation.showPyplotGlobalUse', False)
 warnings.filterwarnings("ignore")
@@ -127,6 +129,8 @@ then :
 
 Note: Try to use Seaborn for data visualization, and use scikit-learn for machine learning algorithms.
 '''
+# Initialize ConversationBufferMemory
+memory = ConversationBufferMemory(max_len=100) 
 
 @st.cache_resource
 def extract_text_from_csv(csv_file, custom):
@@ -214,3 +218,6 @@ if st.session_state.messages and st.session_state.messages[-1]["role"] != "assis
                         "role": "assistant", "content": answer}
                     chat_history.append((prompt, answer))
                     st.session_state.messages.append(assistant_message)
+
+# Store the chat history in ConversationBufferMemory
+memory.store(chat_history)
